@@ -1,0 +1,23 @@
+// app/views/cidades/index.js.erb
+// Atualize a parte da página que você deseja alterar após a busca
+
+function carregarTabela() {
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      document.getElementById("tabela-cidades").innerHTML = xhr.responseText;
+    }
+  };
+
+  // A rota para obter o HTML da tabela é "/cidades"
+  xhr.open("GET", '/cidades', true);
+  xhr.send();
+}
+
+document.getElementById("submit").addEventListener("click", function(event) {
+  event.preventDefault(); // Impede o envio do formulário padrão
+  carregarTabela();
+});
+
+// Chame a função para carregar a tabela quando necessário
+carregarTabela();

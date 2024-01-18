@@ -1,0 +1,24 @@
+# SQLite para desenvolvimento e teste
+default: &default
+  adapter: sqlite3
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+
+development:
+  <<: *default
+  database: storage/development.sqlite3
+
+test:
+  <<: *default
+  database: storage/test.sqlite3
+
+# PostgreSQL para produção
+production:
+  <<: *default
+  adapter: postgresql
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: seu_usuario_do_postgresql
+  password: sua_senha_do_postgresql
+  host: localhost
+  database: cidades-brasileiras_production

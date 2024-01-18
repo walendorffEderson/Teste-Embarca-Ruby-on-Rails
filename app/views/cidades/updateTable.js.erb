@@ -1,0 +1,7 @@
+// app/views/cidades/updateTable.js.erb
+
+// Obtém o elemento da tabela
+var tabelaCidades = document.getElementById("tabela-cidades");
+
+// Substitui o conteúdo da tabela com o HTML gerado pela visualização parcial
+tabelaCidades.innerHTML = "<%= j render 'cidades/table' %>";

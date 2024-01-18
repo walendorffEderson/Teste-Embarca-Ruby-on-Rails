@@ -1,0 +1,17 @@
+<!-- app/views/cidades/_table.html.erb -->
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Estado</th>
+      <th>Cidade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cidades.each do |cidade| %>
+      <tr>
+        <td><%= cidade.estado.nome %></td>
+        <td><%= h cidade.nome %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

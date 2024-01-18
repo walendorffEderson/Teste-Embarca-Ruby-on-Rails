@@ -1,0 +1,98 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to right, #00A859, #FFCC29, #100d91);
+}
+
+/* END: Reset */
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container>h1 {
+    font-size: 60px;
+    font-weight: 900;
+    margin: 15px 2%;
+    white-space: nowrap;
+}
+
+form>input[type=text] {
+    margin: 0;
+    border: none;
+    width: 250px;
+    height: 30px;
+    border-radius: 3%;
+    text-align: center;
+    font-size: large;
+    margin-bottom: 25px;
+}
+
+input[type="text"]::placeholder {
+    color: #80808087;
+}
+
+input[type="submit"] {
+    border: none;
+    width: 100%;
+    height: 30px;
+    border-radius: 3%;
+    background-color: #00A859;
+    color: white;
+    font-size: large;
+    font-weight: 600;
+    cursor: pointer;
+    display: block;
+    margin-top: -18px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #00824f;
+}
+
+.table {
+    margin-top: 25px;
+    border-collapse: collapse;
+    width: 100%;
+    color: #000000;
+    font-size: 25px;
+    text-align: center;
+}
+
+.table-striped th {
+    padding: 10px;
+    text-align: center;
+    font-size: 40px;
+}
+
+input[type="text"]:focus-visible {
+    outline: none;
+    filter: drop-shadow(1px 2px 2px rgba(128, 128, 128, 0.541));
+}
+
+.table-striped tbody tr {
+    display: table-row;
+}
+
+.table-striped tbody tr td {
+    display: table-cell;
+    padding: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.466);
+}

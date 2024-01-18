@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Cidades Brasileiras</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <%= stylesheet_link_tag 'style', media: 'all' %>
+  <%= stylesheet_link_tag 'style', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag 'custom' %>
+</head>
+<body>
+  <div class="container">
+    <h1>Cidades Brasileiras</h1>
+    <form action="/cidades" method="get" remote="false">
+      <input type="text" id="estado" name="estado" placeholder="Estado">
+      <input type="text" id="cidade" name="nome" placeholder="Cidade">
+      <input type="submit" id="submit" value="Buscar" onClick="buscarCidade()">
+    </form>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+        <th>Estado</th>
+        <th>Cidade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @cidades = Cidade.all %>
+        <% @cidades.each do |cidade| %>
+        <tr>
+          <td><%= cidade.estado.nome %></td>
+          <td><%= h cidade.nome %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
